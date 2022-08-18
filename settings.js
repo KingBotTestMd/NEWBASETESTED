@@ -1,23 +1,53 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-//Api Website\\
+//Api Website
 global.APIs = {
 	zenz: 'https://zenzapis.xyz',
 }
 
-//Api Key\\
+//Api Key
 global.APIKeys = {
-	'https://zenzapis.xyz': 'sanzychan01', //credit goes to sanzy yt, if api key expire, buy it and put it here?\\
+	'https://zenzapis.xyz': 'sanzychan01', //credit goes to sanzy yt, if api key expire, buy it and put it here?
 }
 
-//customize settings\\
-global.owner = ['94729352830']
-global.premium = ['94729352830']
-global.ownernomer = '94729352830'
+
+
+//You Can Customize That Settings
+
+//Your Number
+global.owner = ['94787166875']
+global.premium = ['94787166875']
+global.ownernomer = '94787166875'
+//Your Name
 global.ownername = 'ШHłТΞ HΛϾКΞЯS'
+//Your Bot Name
 global.botname = '[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]'
-global.footer = '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷'
+//You Can Type -> default
+//Or Type Your Alive Massage Here
+global.alivemsg = `default`
+global.alivepic = 'https://telegra.ph/file/a834f7241132ff06f6474.jpg'
+//You Can Type On -> true | Off -> false
+global.reactall = 'false'
+global.reactchat = 'true'
+//You Can Change That Settings After Deployed Your Bot
+//Using .setmenu Command
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Don't Change That Settings👇👇👇
 global.ig = 'https://github.com/KING-BOT-OFFICIAL'
 global.sc = 'https://github.com/KING-BOT-OFFICIAL/KING-BOT-MD'
 global.myweb = 'https://youtube.com/channel/UCgwWV1Cya4_gUFKYOQYQtHw'
@@ -58,6 +88,8 @@ global.flaming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutpu
 global.fluming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=fluffy-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
 global.flarun = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=runner-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
 global.flasmurf = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=smurfs-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
+
+
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
 	fs.unwatchFile(file)
