@@ -185,9 +185,10 @@ const reply = (teks) => {
 if (global.reactchat == 'true') {
 if (budy.match('Hi')) { KingmdWH.sendMessage(from, { react: { text: "👋", key: m.key }}) }
 if (budy.match('hi')) { KingmdWH.sendMessage(from, { react: { text: "👋", key: m.key }}) }
-if (budy.match('😂' , '🤣')) { KingmdWH.sendMessage(from, { react: { text: "🤣", key: m.key }}) }       } else {}
+if (budy.match('😂') , ('🤣')) { KingmdWH.sendMessage(from, { react: { text: "🤣", key: m.key }}) }
+if (budy.match('🤕')) { KingmdWH.sendMessage(from, { react: { text: "🙃", key: m.key }}) }       } else {}
 if (global.reactall == 'true') {
-const lel = ['❄️', '🍁', '🎲', '🇱🇰', '💫']
+const lel = ['❄️', '🍁', '🎲', '🇱🇰', '💫', '🛡️', '🍃', '⚡', '🥎', '🥌', '🔮', '🪄', '🧩', '🧸', '🪤', '⚖', '🖲️', '📛']
 const kingautoreact = lel[Math.floor(Math.random() * lel.length)]
 if (budy.match('a')) { KingmdWH.sendMessage(from, { react: { text: `${kingautoreact}`, key: m.key }}) }
 if (budy.match('e')) { KingmdWH.sendMessage(from, { react: { text: `${kingautoreact}`, key: m.key }}) }
