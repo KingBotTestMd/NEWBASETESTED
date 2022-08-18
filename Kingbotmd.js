@@ -183,7 +183,9 @@ const reply = (teks) => {
 
 //Auto React Function
 if (global.reactchat == 'true') {
-if (budy.match('Hi')) { KingmdWH.sendMessage(from, { react: { text: "👋", key: m.key }}) }       } else {}
+if (budy.match('Hi')) { KingmdWH.sendMessage(from, { react: { text: "👋", key: m.key }}) }
+if (budy.match('hi')) { KingmdWH.sendMessage(from, { react: { text: "👋", key: m.key }}) }
+if (budy.match('😂' , '🤣')) { KingmdWH.sendMessage(from, { react: { text: "🤣", key: m.key }}) }       } else {}
 if (global.reactall == 'true') {
 const lel = ['❄️', '🍁', '🎲', '🇱🇰', '💫']
 const kingautoreact = lel[Math.floor(Math.random() * lel.length)]
@@ -1642,7 +1644,7 @@ Kingbotalive = '─┈┈┈┄┄╌╌╌╌┄┄┈┈┈─\n'
 +'                   ✦𝙷𝙸 𝚃𝙷𝙴𝚁𝙴,࿐\n'
 +'            ꧁°•ɪ ᴀᴍ ᴀʟɪᴠᴇ ɴᴏᴡ•°꧂\n'
 +'─┈┈┈┄┄╌╌╌╌┄┄┈┈┈─\n\n'
-+'👋ʜɪ ᴅᴇᴀʀ ${pushname},\n\n'
++`👋ʜɪ ᴅᴇᴀʀ ${pushname},\n\n`
 +'🌳 ɪ ᴀᴍ ᴏɴʟɪɴᴇ ɴᴏᴡ\n'
 +'🌳 ʏᴏᴜ ᴄᴀɴ ᴜꜱᴇ ᴍᴇ\n'
 +'       🍃 ʙᴜᴛ 🍃\n'
