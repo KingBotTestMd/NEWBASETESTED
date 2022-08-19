@@ -2052,32 +2052,24 @@ Ex - ( Dialog zoom *Rs- 165  )
                 KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
            break
-	     case 'fb': case 'facebook': {     	    
-  reply(mess.wait)        
-  if (!text) throw '*Enter a Link Query!*'
-     if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw '*The link you provided is not valid*'         
- let bocil = require('@bochilteam/scraper')  
-     bocil.facebookdlv2(`${text}`).then(async (kingfb) => {
-         let txt = `*[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] FB Downloader
-
-*🔰 TITLE :* ${kingfb.title}
-*🔰 QUALITY :* ${kingfb.result[0].quality}
-*🔰 DESCRIPTION :* ${kingfb.description}
-*🔰 ID :* ZIM BOT INC
-*🔰 URL :* ${text}`
-     buf = await getBuffer(kingfb.thumbnail)
-     KingmdWH.sendMessage(m.chat, { image: { url: kingfb.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, {quoted: mudratunha})
-     for (let i of kingfb.result) {  
-    KingmdWH.sendMessage(m.chat, { video: { url: i.url }, jpegThumbnail:buf, mimetype: 'video/mp4', caption: `*◉ Quality :* ${i.quality}` ,  quoted: m,contextInfo: { externalAdReply:{
-      title:"[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]",
-      body:"KING BOT FB DOWNLOADER",
-      showAdAttribution: true,
-      mediaType:2,
-      thumbnail: fs.readFileSync(`./src/logo.jpeg`) ,
-      mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-      sourceUrl: `https://youtu.be/KNu-gr2h7bo` }}}, {quoted: m})
-      } }).catch((err) => { reply(mess.error) })
-                }
+	     case 'fb': case 'facebook': {
+             if (!text) return reply(`Where is the link bro?\nExample: ${prefix}facebook https://www.facebook.com/groups/599913174599515/permalink/705467384044093/`)
+                if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is not valid`)
+            let bocil = require('@bochilteam/scraper')  
+                bocil.facebookdlv2(`${text}`).then(async (data) => {                   
+                    let txt = `*FB DOWNLOADER*\n\n`
+                    txt += `*🍁TITLE :* ${data.title}\n`
+                    txt += `*🍁QUALITY :* ${data.result[0].quality}\n`
+                    txt += `*🍁DESCRIPTION :* ${data.description}\n`
+                    txt += `*🍁ID :* ${watermark}\n`
+                    txt += `*🍁URL :* ${text}\n\n`
+                buf = await getBuffer(data.thumbnail)    
+                KingmdWH.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })         
+                for (let i of data.result) {     
+                KingmdWH.sendMessage(m.chat, { video: { url: i.url }, jpegThumbnail:buf, caption: `*🍁 Quality :* ${i.quality}`}, { quoted: m })
+                }          
+                }).catch((err) => {
+                    reply(mess.error)   }) }
 break
 case 'mediafire': {
 if (!text) return reply(mess.linkm)
