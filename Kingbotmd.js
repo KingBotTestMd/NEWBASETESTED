@@ -2105,35 +2105,6 @@ Ex - ( Dialog zoom *Rs- 165  )
                 }
                 KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
-           break
-	     case 'fbdl': case 'fb': case 'facebook': case 'fbvideo': {     	    
-  reply(mess.wait)        
-  if (!text) throw '*Enter a Link Query!*'
-  if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw '*The link you provided is not valid*'         
-  let bocil = require('@bochilteam/scraper')  
-  bocil.facebookdlv2(`${text}`).then(async (data) => {                   
-
-let txt = `      ⟮ _*◉FB Dᴏᴡɴʟᴏᴀᴅ◉*_ ⟯ *
-
-*◉ TITLE :* ${data.title}
-*◉QUALITY :* ${data.result[0].quality}
-*◉ DESCRIPTION :* ${data.description}
-*◉ URL :* ${text}'
-
-     buf = await getBuffer(data.thumbnail)    
-
-     KingmdWH.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: txt }, {quoted: mudratunha})
-     for (let i of data.result) {  
-    KingmdWH.sendMessage(m.chat, { video: { url: i.url }, jpegThumbnail:buf, mimetype: 'video/mp4', caption: `*◉ Quality :* ${i.quality}` ,  quoted: m,contextInfo: { externalAdReply:{
-      title:"ZIM BOT V4",
-      body:"SUBSCRIBE DRIPS OFC",
-      showAdAttribution: true,
-      mediaType:2,
-      thumbnail: fs.readFileSync(`./src/logo.jpeg`) ,
-      mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-      sourceUrl: `https://youtu.be/KNu-gr2h7bo` }}}, {quoted: m})
-     } }).catch((err) => {   reply(`*Failed When Downloading Media and Sending Files*`)  })
-}
 break
 case 'mediafire': {
 if (!text) return reply(mess.linkm)
