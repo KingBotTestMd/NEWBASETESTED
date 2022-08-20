@@ -165,7 +165,7 @@ if (!('autoblock' in setting)) setting.autoblock = false
 status: 0,
 autobio: true,
 autoblock: false,
-    } catch (err) { console.error(err) }
+    }
 
 //auto set bio
 if (db.data.settings[botNumber].autobio) {
