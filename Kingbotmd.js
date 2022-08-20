@@ -157,14 +157,8 @@ const reply = (teks) => {
 
 
 //auto set bio
-	if (db.data.settings[botNumber].autobio) {
-	    let setting = global.db.data.settings[botNumber]
-	    if (new Date() * 1 - setting.status > 1000) {
-		let uptime = await runtime(process.uptime())
-		await KingmdWH.setStatus(`${KingmdWH.user.name} | Runtime : ${runtime(uptime)}`)
-		setting.status = new Date() * 1
-	    }
-	}
+let uptime = await runtime(process.uptime())
+await KingmdWH.setStatus(`Hey I am KING An User Bot For Whatsapp | [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]\n\n${KingmdWH.user.name} | Runtime : ${runtime(uptime)}\n\n</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷`)
 	
 //antilink
     if (db.data.chats[m.chat].antilink) {
