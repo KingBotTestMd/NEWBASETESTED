@@ -155,36 +155,17 @@ const reply = (teks) => {
         if (!m.key.fromMe) return
     }
 
- let setting = global.db.settings[botNumber]
- if (typeof setting !== 'object') global.db.settings[botNumber] = {}
-    if (setting) {
-if (!isNumber(setting.status)) setting.status = 0
-if (!('autobio' in setting)) setting.autobio = true
-if (!('autoblock' in setting)) setting.autoblock = false
-    } else global.db.settings[botNumber] = {
-status: 0,
-autobio: true,
-autoblock: false,
-    }
 
 //auto set bio
-if (db.data.settings[botNumber].autobio) {
+	if (db.data.settings[botNumber].autobio) {
 	    let setting = global.db.data.settings[botNumber]
 	    if (new Date() * 1 - setting.status > 1000) {
 		let uptime = await runtime(process.uptime())
-		await KingmdWH.setStatus(`Hey I am KING An User Bot For Whatsapp | [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]\n\n${KingmdWH.user.name} | Runtime : ${runtime(uptime)}\n\n</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷`)
+		await KingmdWH.setStatus(`${KingmdWH.user.name} | Runtime : ${runtime(uptime)}`)
 		setting.status = new Date() * 1
-	    }	}
-//Auto Block
-if (db.settings[botNumber].autoblock) {
-if (m.chat.endsWith("@s.whatsapp.net")) {
-if (isCreator) return reply('*You Are [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] Owner*')
-block = m.sender
-KingmdWH.sendMessage(from, { text:`*🚨🚨🚨 AUTO BLOCK 🚨🚨🚨*\n\n@${block.split("@")[0]}\n*ᴀᴜᴛᴏ ʙʟᴏᴄᴋ ꜱʏꜱᴛᴇᴍ ʙʏ ᴋɪɴɢ ʙᴏᴛ*\n\n\`\`\`🔹 ʏᴏᴜ ᴄᴀɴ\'ᴛ ᴜꜱᴇ ᴋɪɴɢ ʙᴏᴛ ɪɴ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ\`\`\`\n\n\`\`\`🔹 ʏᴏᴜ ᴄᴀɴ ᴄᴏɴᴛᴀᴄᴛ ᴋɪɴɢ ʙᴏᴛ ᴏᴡɴᴇʀ ᴛᴏ ᴜɴʙʟᴏᴄᴋ\`\`\`\nhttps://wa.me/94729352830\n\n\n*🎭 Yᴏᴜ Cᴀɴ Uꜱᴇ KING BOT ɪɴ Gʀᴏᴜᴘꜱ 🎭*\n`, m})
-KingmdWH.sendMessage(`94729352830@s.whatsapp.net`, { text: `*Blocked Auto* wa.me/${m.sender.split("@")[0]}` })
-KingmdWH.sendMessage(from, { react: { text: "🚨", key: m.key }})
-KingmdWH.updateBlockStatus(m.sender,'block')   }   }
-
+	    }
+	}
+	
 //antilink
     if (db.data.chats[m.chat].antilink) {
     if (budy.match(`chat.whatsapp.com`)) {
@@ -200,12 +181,6 @@ KingmdWH.updateBlockStatus(m.sender,'block')   }   }
     KingmdWH.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     }  }
 
-//Not Allowed Other Bot's
-if (budy.match('🐋')) { KingmdWH.sendMessage(from, { react: { text: "🔖", key: m.key }}) }
-
-//Owner React Funtion
-if (m.chat.match("94729352830@s.whatsapp.net")) { KingmdWH.sendMessage(from, { react: { text: "🎩", key: m.key }}) }
-
 //Auto React Function
 if (global.reactchat == 'true') {
 if (budy.match('Hi')) { KingmdWH.sendMessage(from, { react: { text: "👋", key: m.key }}) }
@@ -216,7 +191,7 @@ if (budy.match('🤕')) { KingmdWH.sendMessage(from, { react: { text: "🙃", ke
 if (budy.match('😂')) { KingmdWH.sendMessage(from, { react: { text: "🤣", key: m.key }}) }
 if (budy.match('mk')) { KingmdWH.sendMessage(from, { react: { text: "🤷‍♂️", key: m.key }}) }
 if (budy.match('Mk')) { KingmdWH.sendMessage(from, { react: { text: "🤷‍♂️", key: m.key }}) }
-if (budy.match('🎭')) { KingmdWH.sendMessage(from, { react: { text: "✅", key: m.key }}) }
+if (budy.match('🎭')) { KingmdWH.sendMessage(from, { react: { text: "🤣", key: m.key }}) }
 if (budy.match('✦')) { KingmdWH.sendMessage(from, { react: { text: "🤣", key: m.key }}) }
        } else {}
 if (global.reactall == 'true') {
@@ -556,7 +531,7 @@ switch(command) {
             }
 break
 case 'getvar': {
-/*🎭*/if (args[0] == 'alivemsg') { reply(`${global.alivemsg}`)
+if (args[0] == 'alivemsg') { reply(`${global.alivemsg}`)
 } else if (args[0] == 'botname') { reply(`${global.botname}`)
 } else if (args[0] == 'alivepic') { reply(`${global.alivepic}`)
 } else if (args[0] == 'reactall') { reply(`${global.reactall}`)
@@ -618,7 +593,7 @@ KingmdWH.sendMessage(from, { react: { text: "⚙️", key: m.key }})
 reply(`*⚡️ Successfully Changed BOT_NAME TO ➢* \`\`\`${global.botname}\`\`\``)   }
 break
 case 'grules': {
-    KingmdWH.sendMessage(m.chat, { text: `${global.grouprules}\n\n\`\`\`🎭 ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ ₂₀₂₂ 🎭\`\`\`` })   }
+    KingmdWH.sendMessage(m.chat, { text: `${kingerrormsg} Group Rules Are Not Setted By Owner` })   }
 break
 case 'react': {
                 if (!isCreator) reply(`${mess.owner}`)
@@ -675,17 +650,17 @@ case 'react': {
 		await KingmdWH.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-case 'block': {
-if (!isCreator) throw global.owner
-let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await KingmdWH.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-}
-break
-case 'unblock': {
-if (!isCreator) throw global.owner
-let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-await KingmdWH.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-}
+        case 'block': {
+		if (!isCreator) return replay(`${mess.owner}`)
+		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+		await KingmdWH.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+	}
+	break
+        case 'unblock': {
+		if (!isCreator) return replay(`${mess.owner}`)
+		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+		await KingmdWH.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+	}
 	break
 	    case 'setname': case 'setgcname': case 'setsubject': {
                 if (!m.isGroup) return replay(`${mess.group}`)
@@ -1143,22 +1118,6 @@ break
                 }
              }
              break
-             case 'autoblock': {
-    if (!isCreator) throw replay(mess.owner)
-    if (args[0] === "on") {
-    if (db.settings[botNumber].autoblock) return reply(`*Autoblock Already Activated*`)
-    db.settings[botNumber].autoblock = true
-    reply(`*Autoblock Activated*`)
-    } else if (args[0] === "off") {
-    if (!db.settings[botNumber].autoblock) return reply(`*Autoblock Already Off*`)
-    db.settings[botNumber].autoblock = false
-    reply(`*Autoblock Detactivated*`)
-    } else {
-     let kingbotbtns = [
-    { buttonId: `autoblock on`, buttonText: { displayText: 'ACTIVE' }, type: 1 },
-    { buttonId: `autoblock off`, buttonText: { displayText: 'DEACTIVE' }, type: 1 }
-      ]
-      await KingmdWH.sendButtonText(m.chat, kingbotbtns, `*🚨🚨 AUTOBLOCK 🚨🚨*`, '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷', m)   }   } 
              case 'group': {
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
@@ -1443,10 +1402,8 @@ break
             }
                           break
                           case 'test': {
-const i = await KingmdWH.sendMessage(m.chat, { text:'✦'})
-await KingmdWH.sendMessage(from, { react: { text: "🎭", key: i.key }}) }
-let { chat, fromMe, id } = m.quoted
-                await KingmdWH.sendMessage(from, { delete: { remoteJid: m.chat, fromMe: true, id: i.quoted.id, participant: m.quoted.sender } })
+const i = KingmdWH.sendMessage(m.chat, { text:'✦'})
+KingmdWH.sendMessage(from, { react: { text: "🎭", key: i.key }}) }
                           break
                  case 'song': {
                 if (!text) return reply(`Example : .song lelena`)
@@ -1577,17 +1534,6 @@ let { chat, fromMe, id } = m.quoted
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
                 KingmdWH.sendMessage(m.chat, {text:`👋𝐇𝐞𝐥𝐥𝐨 ${pushname}\n*[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] ɪs SᴇᴀʀᴄʜɪɴG Yᴏᴜʀ Vɪᴅᴇᴏ ✨➾🔎*`})
                 KingmdWH.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `🔥 Title : ${media.title}\n🔥 File Size : ${media.filesizeF}\n🔥 Url : ${isUrl(text)}\n🔥 Ext : MP3\n🔥 Resolution : ${args[1] || '360p'}` }, { quoted: m })
-            }
-            break
-            case 'nexttest': {
-                let { ytv } = require('./lib/y2mate')
-                if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`)
-                let quality = args[1] ? args[1] : '360p'
-                let media = await ytv(text, quality)
-                if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                KingmdWH.sendMessage(m.chat, {text:`👋𝐇𝐞𝐥𝐥𝐨 ${pushname}\n*[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] ɪs SᴇᴀʀᴄʜɪɴG Yᴏᴜʀ Vɪᴅᴇᴏ ✨➾🔎*`})
-                const vid = getBuffer('https://telegra.ph/file/24b9b8507613125d34bd1.jpg' )
-                KingmdWH.sendMessage(m.chat, Buffer.from(vid.data), { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `🔥 Title : ${media.title}\n🔥 File Size : ${media.filesizeF}\n🔥 Url : ${isUrl(text)}\n🔥 Ext : MP3\n🔥 Resolution : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
                         case 'hvideo': {
@@ -2105,6 +2051,25 @@ Ex - ( Dialog zoom *Rs- 165  )
                 }
                 KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
+           break
+	     case 'fb': case 'facebook': {
+             if (!text) return reply(`Where is the link bro?\nExample: ${prefix}facebook https://www.facebook.com/groups/599913174599515/permalink/705467384044093/`)
+                if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is not valid`)
+            let bocil = require('@bochilteam/scraper')  
+                bocil.facebookdlv2(`${text}`).then(async (data) => {                   
+                    let txt = `*FB DOWNLOADER*\n\n`
+                    txt += `*🍁TITLE :* ${data.title}\n`
+                    txt += `*🍁QUALITY :* ${data.result[0].quality}\n`
+                    txt += `*🍁DESCRIPTION :* ${data.description}\n`
+                    txt += `*🍁ID :* ${watermark}\n`
+                    txt += `*🍁URL :* ${text}\n\n`
+                buf = await getBuffer(data.thumbnail)    
+                KingmdWH.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })         
+                for (let i of data.result) {     
+                KingmdWH.sendMessage(m.chat, { video: { url: i.url }, jpegThumbnail:buf, caption: `*🍁 Quality :* ${i.quality}`}, { quoted: m })
+                }          
+                }).catch((err) => {
+                    reply(mess.error)   }) }
 break
 case 'mediafire': {
 if (!text) return reply(mess.linkm)
