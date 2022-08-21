@@ -86,11 +86,7 @@ async function startKingmdWH() {
     KingmdWH.ev.on('groups.update', async pea => {
        //console.log(pea)
     // Get Profile Picture Group
-       try {
-       ppgc = await KingmdWH.profilePictureUrl(pea[0].id, 'image')
-       } catch {
-       ppgc = 'https://shortlink.KingmdWHarridho.my.id/rg1oT'
-       }
+       try { ppgc = await KingmdWH.profilePictureUrl(pea[0].id, 'image') } catch { ppgc = 'https://shortlink.KingmdWHarridho.my.id/rg1oT' }
        let wm_fatih = { url : ppgc }
        if (pea[0].announce == true) {
        KingmdWH.send5ButImg(pea[0].id, `*「 Group Settings Changed 」*\n\nThe Group Has Been Closed By Admin, Now Only Admin Can Send Messages !`, `</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷`, wm_fatih, [])
@@ -110,22 +106,14 @@ KingmdWH.ev.on('group-participants.update', async (anu) => {
 try {
      let metadata = await KingmdWH.groupMetadata(anu.id)
      let participants = anu.participants
-        for (let num of participants) {
+     for (let num of participants) {
 // Get Profile Picture User
-      try { ppuser = await KingmdWH.profilePictureUrl(num, 'image')
-               } catch { ppuser = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
-                }
-
+try { ppuser = await KingmdWH.profilePictureUrl(num, 'image') } catch { ppuser = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg' }
 //Get Profile Picture Group
-try { ppgroup = await KingmdWH.profilePictureUrl(anu.id, 'image')
-      } catch {
-          ppgroup = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
-                }
-
+try { ppgroup = await KingmdWH.profilePictureUrl(anu.id, 'image') } catch { ppgroup = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg' }
 //welcome
 let nama = await KingmdWH.getName(num)
 memb = metadata.participants.length
-
 Kingbotwelcome = await getBuffer(`${ppuser}`)
 Kingbotgoodbye = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURIComponent(ppuser)}&name=${encodeURIComponent(nama)}&bg=https://telegra.ph/file/8bbe8a7de5c351dfcb077.jpg&namegb=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(memb)}`)
 //Send Welcome Massage
@@ -136,29 +124,17 @@ if (anu.action == 'add') {
                 ]
                 let buttonMessage = {
                     image: Kingbotwelcome,
-                    caption: `⭐ Hi👋 @${num.split("@")[0]},
-⭐ Welcome To ${metadata.subject}
-
-⭐ Description: ${metadata.desc}
-
-⭐ Welcome To Our Comfortable Happy😋, Sometimes Loud😜, Usually Messy🤥, Full Of Love🥰, HOME😌!!`,
+                    caption: `👋 HI @${num.split("@")[0]},\n\n`
++`⭐ WELCOME TO ${metadata.subject}\n\n`
++`⭐ DESCRIPTION : \n${metadata.desc}\n\n\n`
++`\`\`\`🎭 Welcome Bro, I am King an user Bot For Whatsapp 🎭\`\`\`\n🔹 You Can get *[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]* Menu From Sending .menu`,
                     footer: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
                     templateButtons: buttons,
                     headerType: 4
                 }
                 KingmdWH.sendMessage(anu.id, buttonMessage, { quoted: m })
-                
 //Send Goodbye Massage
-                } else if (anu.action == 'remove') {
-                    KingmdWH.sendMessage(anu.id, { image: Kingbotgoodbye, contextInfo: { mentionedJid: [num] }, caption: `⭐ @${num.split("@")[0]} Left ${metadata.subject}
-
-⭐ I'm Not Sure If It Was A Goodbye Charm, But It Was Fun While It Lasted 😌✨` })
-                }
-            }
-        } catch (err) {
-            console.log(err)
-        }
-    })
+                } else if (anu.action == 'remove') { KingmdWH.sendMessage(anu.id, { image: Kingbotgoodbye, contextInfo: { mentionedJid: [num] }, caption: `User -> @${num.split("@")[0]}\nLEFT FROM ${metadata.subject}\n\n😒 GoodBye Bro, 🤕\n🎭 I am KING An User Bot For Whatsapp` })   }  }   } catch (err) { console.log(err) }  })
 	
 //Setting
     KingmdWH.decodeJid = (jid) => {
@@ -247,6 +223,7 @@ console.log(chalk.green.bold('✅ Login successful! >>>'))
 console.log(chalk.blueBright.italic('⬇️ Installing external plugins... ->'))
 console.log(chalk.green.bold('✅ Plugins installed! >>>'))
 console.log(chalk.green.bold('✅ Connected! >>>'))
+KingmdWH.sendMessage(`94787166875@s.whatsapp.net`, {text: `*🙋‍♂️️ Hellow !! ${KingmdWH.user.name}*\n\n*🎭️ Welcome To [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] WhatsApp User Bot  :│🎭️*\n\n\n*🍁️│[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] is Working On Your Account*\n\n*🍁 Use the 🚀.menu command to get bot menu !!!*\n\n*🎭️ [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] is a powerfull WhatsApp robot developed by </> ШHłТΞ HΛϾКΞЯ (🎭); ->.*\n\n*🚀 This is your LOG number. Avoid using the command here.\nDon\'t Use You Bot In Public Mode !!!\n\n\n⎝🔥𝚱𝚰𝚴Ｇ🔥⎠ ᴡʜᴀᴛꜱᴀᴘᴘ ᴜꜱᴇʀ ʙᴏᴛ V2.0.0` })
 
     })
 

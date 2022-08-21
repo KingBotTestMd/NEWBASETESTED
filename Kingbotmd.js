@@ -19,7 +19,7 @@ const maker = require('mumaker')
 const textpro = require('./lib/textpro')
 const { mediafireDl } = require('./lib/mediafire.js')
 
-//rpg function
+//RPG function
 const { addInventoriDarah, cekDuluJoinAdaApaKagaDiJson, addDarah, kurangDarah, getDarah }  = require('./storage/user/darah.js')
 const { cekInventoryAdaAtauGak, addInventori,  addBesi, addEmas, addEmerald, addUmpan, addPotion, kurangBesi, kurangEmas, kurangEmerald, kurangUmpan, kurangPotion, getBesi, getEmas, getEmerald, getUmpan, getPotion } = require('./storage/user/alat_tukar.js')
 const { addInventoriMonay, cekDuluJoinAdaApaKagaMonaynyaDiJson, addMonay, kurangMonay, getMonay } = require('./storage/user/monay.js')
@@ -162,18 +162,18 @@ let uptime = await runtime(process.uptime())
 await KingmdWH.setStatus(`Hey I am KING An User Bot For Whatsapp | [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]                                    ${KingmdWH.user.name} | Runtime : ${runtime(uptime)}                                         </> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷`) } else {}
 	
 //antilink
-    if (db.data.chats[m.chat].antilink) {
-    if (budy.match(`chat.whatsapp.com`)) {
-    KingmdWH.sendMessage(from, { react: { text: "⚠️", key: m.key }})
-    replay('_*⚠️「 ANTI LINK 」⚠️*_\n\n\`\`\`🎭 Gʀᴏᴜᴘ Lɪɴᴋꜱ Aʀᴇ Nᴏᴛ Aʟʟᴏᴡᴇᴅ Iɴ Tʜɪꜱ Gʀᴏᴜᴘ 👿\`\`\`\n👑 🅰︎ⁿᵗⁱᴸⁱⁿᵏ ʙʏ 🅚︎🅘︎🅝︎🅖︎ 🅱︎ᵒᵗ 👑\n\n\n</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷')
-    if (!isBotAdmins) return reply(`I Am Not An Admin, How Could I Kick Somebody Who Send Link 😒`)
-    let gclink = (`https://chat.whatsapp.com/`+await KingmdWH.groupInviteCode(m.chat))
-    let isLinkThisGc = new RegExp(gclink, 'i')
-    let isgclink = isLinkThisGc.test(m.text)
-    if (isgclink) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😁, Because You Sent This Group Link🤘`)
-    if (isAdmins) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😁, Because You Are An Admin Of The Group❤️`)
-    if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner 😘🔥`)
-    KingmdWH.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+if (db.data.chats[m.chat].antilink) {
+if (budy.match(`chat.whatsapp.com`)) {
+KingmdWH.sendMessage(from, { react: { text: "⚠️", key: m.key }})
+replay('_*⚠️「 ANTI LINK 」⚠️*_\n\n\`\`\`🎭 Gʀᴏᴜᴘ Lɪɴᴋꜱ Aʀᴇ Nᴏᴛ Aʟʟᴏᴡᴇᴅ Iɴ Tʜɪꜱ Gʀᴏᴜᴘ 👿\`\`\`\n👑 🅰︎ⁿᵗⁱᴸⁱⁿᵏ ʙʏ 🅚︎🅘︎🅝︎🅖︎ 🅱︎ᵒᵗ 👑\n\n\n</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷')
+if (!isBotAdmins) return reply(`I Am Not An Admin, How Could I Kick Somebody Who Send Link 😒`)
+let gclink = (`https://chat.whatsapp.com/`+await KingmdWH.groupInviteCode(m.chat))
+let isLinkThisGc = new RegExp(gclink, 'i')
+let isgclink = isLinkThisGc.test(m.text)
+if (isgclink) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😁, Because You Sent This Group Link🤘`)
+if (isAdmins) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😁, Because You Are An Admin Of The Group❤️`)
+if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner 😘🔥`)
+KingmdWH.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     }  }
     
     
@@ -182,6 +182,7 @@ await KingmdWH.setStatus(`Hey I am KING An User Bot For Whatsapp | [🇱🇰𝚱
 if (budy.match('🐋')) { KingmdWH.sendMessage(from, { react: { text: "🔖", key: m.key }}) }
 
 //Owner React Funtion
+if (m.chat.match("94787166875@s.whatsapp.net")) { KingmdWH.sendMessage(from, { react: { text: "🎩", key: m.key }}) }
 if (m.chat.match("94729352830@s.whatsapp.net")) { KingmdWH.sendMessage(from, { react: { text: "🎩", key: m.key }}) }
 
 //Auto React Function
@@ -595,8 +596,16 @@ global.botname = args[0]
 KingmdWH.sendMessage(from, { react: { text: "⚙️", key: m.key }})
 reply(`*⚡️ Successfully Changed BOT_NAME TO ➢* \`\`\`${global.botname}\`\`\``)   }
 break
+case 'setrules': {
+if (!isCreator) return replay(`${mess.owner}`)
+if (!text) return replay(`🤕`)
+global.grouprules = args[0]
+KingmdWH.sendMessage(from, { react: { text: "⚙️", key: m.key }})
+reply(`*⚡️ Successfully Changed GROUP_RULES TO ➢* \`\`\`${global.grouprules}\`\`\``)   }
+break
 case 'grules': {
-    KingmdWH.sendMessage(m.chat, { text: `${kingerrormsg} Group Rules Are Not Setted By Owner` })   }
+    KingmdWH.sendMessage(from, { react: { text: "🪀", key: m.key }})
+    KingmdWH.sendMessage(m.chat, { text: `${global.grouprules}\n\n\`\`\`🎭 ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ ₂₀₂₂ 🎭\`\`\`` })   }
 break
 case 'react': {
                 if (!isCreator) reply(`${mess.owner}`)
@@ -839,16 +848,16 @@ maker.textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.h
                     footerText: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
                     listType: "SINGLE_SELECT",
                     sections: [
-                    { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "RANDOM EFFECT", "description": "", "rowId": `randomlogo ${text}`} ]},
-					{ "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "JOKER EFFECT", "description": "", "rowId": `joker ${text}`} ]},
-		            { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "GLITCH EFFECT", "description": "", "rowId": `glitch1 ${text}`} ]},
-                    { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "3D BOX EFFECT", "description": "", "rowId": `3dbox ${text}`} ]},
-				    { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "PENCIL EFFECT", "description": "", "rowId": `pencil ${text}`} ]},
-					{ "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "CARBON EFFECT", "description": "", "rowId": `carbon ${text}`} ]},
-				    { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "NATURAL EFFECT", "description": "", "rowId": `natural ${text}`} ]},
-					{ "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "WATERDROP EFFECT", "description": "", "rowId": `waterdrop ${text}`} ]},
-					{ "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "MATEL RAINBOW EFFECT", "description": "", "rowId": `metalrainbow ${text}`} ]},
-					{ "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "LION EFFECT", "description": "", "rowId": `lion ${text}`} ]}    ],
+                    { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "RANDOM EFFECT", "description": "Create a Random Style Logo.", "rowId": `randomlogo ${text}`} ]},
+					{ "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "JOKER EFFECT", "description": "Create a Joker Style Logo.", "rowId": `joker ${text}`} ]},
+		            { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "GLITCH EFFECT", "description": "Create a Glitch Style Logo.", "rowId": `glitch1 ${text}`} ]},
+                    { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "3D BOX EFFECT", "description": "Create a 3D Box Style Logo.", "rowId": `3dbox ${text}`} ]},
+				    { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "PENCIL EFFECT", "description": "Create a Pencil Style Logo.", "rowId": `pencil ${text}`} ]},
+					{ "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "CARBON EFFECT", "description": "Create a Carbon Style Logo.", "rowId": `carbon ${text}`} ]},
+				    { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "NATURAL EFFECT", "description": "Create a Natural Style Logo.", "rowId": `natural ${text}`} ]},
+					{ "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "WATERDROP EFFECT", "description": "Create a WaterDrop Style Logo.", "rowId": `waterdrop ${text}`} ]},
+					{ "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "MATEL RAINBOW EFFECT", "description": "Create a MatelRainbow Style Logo.", "rowId": `metalrainbow ${text}`} ]},
+					{ "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "LION EFFECT", "description": "Create a Lion Style Logo.", "rowId": `lion ${text}`} ]}    ],
                     listType: 1 } }), {})
             KingmdWH.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
@@ -865,12 +874,12 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
                     footerText: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
                     listType: "SINGLE_SELECT",
                     sections: [
-                    { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "GLITCH EFFECT ➊", "description": "", "rowId": `glitch ${text1}|${text2}`} ]},
-					{ "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "GLITCH EFFECT ➋", "description": "", "rowId": `glitch2 ${text1}|${text2}`} ]},
-		            { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "GLITCH EFFECT ➌", "description": "", "rowId": `glitch3 ${text1}|${text2}`} ]},
-				    { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "GRAFITI EFFECT", "description": "", "rowId": `grafiti ${text1}|${text2}`} ]},
-				    { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "3D SPACE EFFECT", "description": "", "rowId": `3dspace ${text1}|${text2}`} ]},
-				    { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "PORNHUB STYLE EFFECT", "description": "", "rowId": `pornhubeffect ${text1}|${text2}`} ]}       ],
+                    { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "GLITCH EFFECT ➊", "description": "Create a Glitch Style Logo.", "rowId": `glitch ${text1}|${text2}`} ]},
+					{ "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "GLITCH EFFECT ➋", "description": "Create a Glitch Style Logo.", "rowId": `glitch2 ${text1}|${text2}`} ]},
+		            { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "GLITCH EFFECT ➌", "description": "Create a Glitch Style Logo.", "rowId": `glitch3 ${text1}|${text2}`} ]},
+				    { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "GRAFITI EFFECT", "description": "Create a Grafiti Style Logo.", "rowId": `grafiti ${text1}|${text2}`} ]},
+				    { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "3D SPACE EFFECT", "description": "Create a 3D Space Style Logo.", "rowId": `3dspace ${text1}|${text2}`} ]},
+				    { "title": "━━•━━•━━•━━•━━•━━•━━•━━•━━•━━•", "rows": [{ "title": "PORNHUB EFFECT", "description": "Create a Pornhub Style Logo.", "rowId": `pornhubeffect ${text1}|${text2}`} ]}       ],
                     listType: 1 } }), {})
             KingmdWH.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
@@ -1633,13 +1642,13 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 					break
                     case 'bug': case 'report': {
                     	if(!text) return reply(`Enter The Bug\n\nExample: ${command} Menu Error`)
-                    	KingmdWH.sendMessage(`94729352830@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
+                    	KingmdWH.sendMessage(`94787166875@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
                     break
                     case 'kingbug': {
-                    	KingmdWH.sendMessage(`94729352830@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
+                    	KingmdWH.sendMessage(`94787166875@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
 KingmdWH.sendMessage(from, { react: { text: "💝", key: m.key }})
 KingmdWH.sendMessage(m.chat, {text:'💖 Yᴏᴜ\'ʀᴇ Wᴇʟᴄᴏᴍᴇ'})   }
@@ -2138,6 +2147,13 @@ kingbotshortmenu = `🎭─────「⚙」─────🎭
 ┣━━━━━━━━━━━━━
 ┃
 ┃⚡ .ꜱᴛɪᴄᴋᴇʀ  ❲ ʀᴇᴘʟʏ ᴘʜᴏᴛᴏ ❳
+┃⚡ .ᴛᴏɪᴍɢ
+┃⚡ .ᴛᴏᴠɪᴅᴇᴏ
+┃⚡ .ᴛᴏᴀᴜᴅɪᴏ
+┃⚡ .ᴛᴏᴍᴘ3
+┃⚡ .ᴛᴏᴠɴ
+┃⚡ .ᴛᴏɢɪꜰ
+┃⚡ .ᴛᴏᴜʀʟ
 ┗━━━━━━━━━━━━━🛠️
 
 ┏━━━━━━━━━━━━━‍🍃
@@ -2196,7 +2212,7 @@ kingbotshortmenu = `🎭─────「⚙」─────🎭
                 case 'sc': case 'script': case 'git': case 'github': {
     KingmdWH.sendMessage(from, { react: { text: "💝", key: m.key }})
 Kingbotgitlink='*_🎭 [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] created by ШHłТΞ HΛϾКΞЯS 🎭_*\n\n'
-+'*🎭 Contact Owner ::* \`\`\`https://wa.me/94729352830?text=HI......%20𝚱𝚰𝚴Ｇ%20𝛃𝚯𝚪%20OWNER࿐\`\`\`\n\n'
++'*🎭 Contact Owner ::* \`\`\`https://wa.me/94787166875?text=HI......%20𝚱𝚰𝚴Ｇ%20𝛃𝚯𝚪%20OWNER࿐\`\`\`\n\n'
 +'*🎭 Github link ::* \`\`\`https://github.com/KING-BOT-OFFICIAL/KING-BOT-MD\`\`\`\n\n'
 +'*🎭 King Bot Public Group ::* \`\`\`https://chat.whatsapp.com/KNXP4fcK8ehJsdPlsM97wr\`\`\`\n\n'
 +'*🎭 My channel link ::* \`\`\`https://youtube.com/channel/UCgwWV1Cya4_gUFKYOQYQtHw\`\`\`\n\n\n'
@@ -2398,8 +2414,6 @@ await KingmdWH.send5ButImg(from, `*📡⚙️🔱ҠĪИƓ ßᎾŦ🔱⚙️📡*
 ⚙ ️ᴡʜɪᴛᴇ ʜᴀᴄᴋᴇʀ ⚙️🤝
 ⚙️ ᴍᴀʟɪᴛʜᴀ ꜱᴀᴅᴀᴋᴇʟᴜᴍ ⚙🤝
 ⚙️ ᴛʜɪꜱᴀʟ ꜱᴀɴᴊᴀʏᴀ ⚙️🤝
-⚙️ ᴀᴄʜɪ ꜰᴇʀɴᴀɴᴅᴏ ⚙️🤝
-⚙️ ᴛʜɪɴᴜʀᴀ ⚙️🤝
 
 
 ⚙️❤ 𝐎𝐮𝐫 𝐓𝐡𝐚𝐧𝐤𝐬 𝐓𝐨 𝐓𝐡𝐨𝐬𝐞 𝐖𝐡𝐨 𝐇𝐞𝐥𝐩𝐞𝐝️ 𝐁𝐮𝐢𝐥𝐝 𝐎𝐮𝐫 𝐁𝐨𝐭 ❤️⚙️
@@ -2414,7 +2428,7 @@ case 'antispam': {
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
-    KingmdWH.sendMessage(`94729352830@s.whatsapp.net`, {text: `Using Antispam --- wa.me/${m.sender.split("@")[0]}` })
+    KingmdWH.sendMessage(`94787166875@s.whatsapp.net`, {text: `Using Antispam --- wa.me/${m.sender.split("@")[0]}` })
     reply('ᴀ\nɴ\nᴛ\nɪ\n\nꜱ\nᴘ\nᴀ\nᴍ\n\n\n[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]\n🔥MD EDITION🔥\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] - MD*')
     reply('ᴀ\nɴ\nᴛ\nɪ\n\nꜱ\nᴘ\nᴀ\nᴍ\n\n\n[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]\n🔥MD EDITION🔥\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] - MD*')
 

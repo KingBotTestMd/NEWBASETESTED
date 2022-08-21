@@ -30,6 +30,9 @@ global.alivepic = 'https://telegra.ph/file/a834f7241132ff06f6474.jpg'
 //You Can Type On -> true | Off -> false
 global.reactall = 'false'
 global.reactchat = 'true'
+global.autobio = 'true'
+//You Can Set Group Rules
+global.grouprules = `❌ Group Rules Are Not Setted !!!`
 //You Can Change That Settings After Deployed Your Bot
 //Using .setmenu Command
 
