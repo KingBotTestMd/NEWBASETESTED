@@ -157,8 +157,9 @@ const reply = (teks) => {
 
 
 //auto set bio
+if (global.autobio == 'true') {
 let uptime = await runtime(process.uptime())
-await KingmdWH.setStatus(`Hey I am KING An User Bot For Whatsapp | [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]\n\n${KingmdWH.user.name} | Runtime : ${runtime(uptime)}\n\n</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷`)
+await KingmdWH.setStatus(`Hey I am KING An User Bot For Whatsapp | [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]                                    ${KingmdWH.user.name} | Runtime : ${runtime(uptime)}                                         </> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷`) } else {}
 	
 //antilink
     if (db.data.chats[m.chat].antilink) {
@@ -174,6 +175,14 @@ await KingmdWH.setStatus(`Hey I am KING An User Bot For Whatsapp | [🇱🇰𝚱
     if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner 😘🔥`)
     KingmdWH.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     }  }
+    
+    
+    
+//Not Allowed Other Bot's
+if (budy.match('🐋')) { KingmdWH.sendMessage(from, { react: { text: "🔖", key: m.key }}) }
+
+//Owner React Funtion
+if (m.chat.match("94729352830@s.whatsapp.net")) { KingmdWH.sendMessage(from, { react: { text: "🎩", key: m.key }}) }
 
 //Auto React Function
 if (global.reactchat == 'true') {
@@ -1177,7 +1186,7 @@ break
 		             { urlButton: { displayText: '🔥 YOUTUBE 🔥', url: 'https://youtube.com/channel/UCgwWV1Cya4_gUFKYOQYQtHw'} },
 		             { quickReplyButton: { displayText: '📋 MENU 📋', id: 'menu' } },
 		             { quickReplyButton: { displayText: '🇱🇰 OWNER 🇱🇰', id: 'owner' } }      ]
-                      let txt = `「 KING-BOT HERE 」\n\n${text}`
+                      let txt = `*_「 KING BOT HERE 」_*\n\n${text}`
                       KingmdWH.send5ButImg(yoi, txt, KingmdWH.user.name, global.thumb, btn)
 		}       reply('Broadcast Success')  }
             break
