@@ -1651,11 +1651,7 @@ reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, 
                     	KingmdWH.sendMessage(`94787166875@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
 KingmdWH.sendMessage(from, { react: { text: "💝", key: m.key }})
-KingmdWH.sendMessage(m.chat, {text:'💖 Yᴏᴜ\'ʀᴇ Wᴇʟᴄᴏᴍᴇ'})   }
-            break
-case 'testing': {
-var test = await getBuffer('https://telegra.ph/file/24b9b8507613125d34bd1.jpg')
-KingmdWH.sendMessage(m.chat, { image: test }, { quoted: m }) }
+KingmdWH.sendMessage(m.chat, {text:'💖 Yᴏᴜ\'ʀᴇ Wᴇʟᴄᴏᴍᴇ'})   } }
 break
                      case 'alive': {
                      if (global.alivemsg == 'default') {
@@ -1836,6 +1832,21 @@ let buttons = [
                 KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
 break
+case 'newtest': {
+const buttons = [
+        {buttonId: 'alive' , buttonText: {displayText: 'ALIVE' }, type: 1},
+        {buttonId: 'bot' , buttonText: {displayText: 'BOT' }, type: 1}
+
+    ]
+    const buttonMessage = {
+       
+        contentText: '🎭🎭🎭🎭🎭',
+        footerText: '🤘',
+        buttons: buttons,
+        headerType: 4 ,
+        imageMessage: fs.readFileSync('./src/bot.jpg'), 
+    } KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
+    }
                   case 'list': case 'menu': case 'panel': case 'help' :{
                   KingmdWH.sendMessage(from, { react: { text: "💝", key: m.key }})
 
