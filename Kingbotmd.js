@@ -19,7 +19,7 @@ const maker = require('mumaker')
 const textpro = require('./lib/textpro')
 const { mediafireDl } = require('./lib/mediafire.js')
 
-//RPG function
+//rpg function
 const { addInventoriDarah, cekDuluJoinAdaApaKagaDiJson, addDarah, kurangDarah, getDarah }  = require('./storage/user/darah.js')
 const { cekInventoryAdaAtauGak, addInventori,  addBesi, addEmas, addEmerald, addUmpan, addPotion, kurangBesi, kurangEmas, kurangEmerald, kurangUmpan, kurangPotion, getBesi, getEmas, getEmerald, getUmpan, getPotion } = require('./storage/user/alat_tukar.js')
 const { addInventoriMonay, cekDuluJoinAdaApaKagaMonaynyaDiJson, addMonay, kurangMonay, getMonay } = require('./storage/user/monay.js')
@@ -184,6 +184,7 @@ if (budy.match('🐋')) { KingmdWH.sendMessage(from, { react: { text: "🔖", ke
 //Owner React Funtion
 if (m.chat.match("94787166875@s.whatsapp.net")) { KingmdWH.sendMessage(from, { react: { text: "🎩", key: m.key }}) }
 if (m.chat.match("94729352830@s.whatsapp.net")) { KingmdWH.sendMessage(from, { react: { text: "🎩", key: m.key }}) }
+
 
 //Auto React Function
 if (global.reactchat == 'true') {
@@ -507,6 +508,22 @@ const kingcannoterror = '*🎭‍️ ERROR ANALYSER [🇱🇰𝚱𝚰𝚴Ｇ �
 const kingerrormsg = '*🎭‍️ ERROR ANALYSER [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] ‍🎭️*\n\n\n========== ```Error Resolved!``` ==========\n\n*Main Error :*'
                 
 switch(command) {
+case 'newtest': {
+const buttons = [
+        {buttonId: 'alive' , buttonText: {displayText: 'ALIVE' }, type: 1},
+        {buttonId: 'bot' , buttonText: {displayText: 'BOT' }, type: 1}
+
+    ]
+    const buttonMessage = {
+       
+        contentText: '🎭🎭🎭🎭🎭',
+        footerText: '🤘',
+        buttons: buttons,
+        headerType: 4 ,
+        imageMessage: fs.readFileSync('./src/bot.jpg'), 
+    } KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
+    }
+    break
 	    case 'afk': {
                 let user = global.db.data.users[m.sender]
                 user.afkTime = + new Date
@@ -1642,15 +1659,20 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 					break
                     case 'bug': case 'report': {
                     	if(!text) return reply(`Enter The Bug\n\nExample: ${command} Menu Error`)
-                    	KingmdWH.sendMessage(`94787166875@s.whatsapp.net`, { text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
+                    	KingmdWH.sendMessage(`94729352830@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
-reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`) } }
+reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
+                    }
                     break
                     case 'kingbug': {
-                    	KingmdWH.sendMessage(`94787166875@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
+                    	KingmdWH.sendMessage(`94729352830@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
 KingmdWH.sendMessage(from, { react: { text: "💝", key: m.key }})
-KingmdWH.sendMessage(m.chat, {text:'💖 Yᴏᴜ\'ʀᴇ Wᴇʟᴄᴏᴍᴇ'})   } }
+KingmdWH.sendMessage(m.chat, {text:'💖 Yᴏᴜ\'ʀᴇ Wᴇʟᴄᴏᴍᴇ'})   }
+            break
+case 'testing': {
+var test = await getBuffer('https://telegra.ph/file/24b9b8507613125d34bd1.jpg')
+KingmdWH.sendMessage(m.chat, { image: test }, { quoted: m }) }
 break
                      case 'alive': {
                      if (global.alivemsg == 'default') {
@@ -1831,22 +1853,6 @@ let buttons = [
                 KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
 break
-case 'newtest': {
-const buttons = [
-        {buttonId: 'alive' , buttonText: {displayText: 'ALIVE' }, type: 1},
-        {buttonId: 'bot' , buttonText: {displayText: 'BOT' }, type: 1}
-
-    ]
-    const buttonMessage = {
-       
-        contentText: '🎭🎭🎭🎭🎭',
-        footerText: '🤘',
-        buttons: buttons,
-        headerType: 4 ,
-        imageMessage: fs.readFileSync('./src/bot.jpg'), 
-    } KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
-    }
-    break
                   case 'list': case 'menu': case 'panel': case 'help' :{
                   KingmdWH.sendMessage(from, { react: { text: "💝", key: m.key }})
 
@@ -2223,7 +2229,7 @@ kingbotshortmenu = `🎭─────「⚙」─────🎭
                 case 'sc': case 'script': case 'git': case 'github': {
     KingmdWH.sendMessage(from, { react: { text: "💝", key: m.key }})
 Kingbotgitlink='*_🎭 [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] created by ШHłТΞ HΛϾКΞЯS 🎭_*\n\n'
-+'*🎭 Contact Owner ::* \`\`\`https://wa.me/94787166875?text=HI......%20𝚱𝚰𝚴Ｇ%20𝛃𝚯𝚪%20OWNER࿐\`\`\`\n\n'
++'*🎭 Contact Owner ::* \`\`\`https://wa.me/94729352830?text=HI......%20𝚱𝚰𝚴Ｇ%20𝛃𝚯𝚪%20OWNER࿐\`\`\`\n\n'
 +'*🎭 Github link ::* \`\`\`https://github.com/KING-BOT-OFFICIAL/KING-BOT-MD\`\`\`\n\n'
 +'*🎭 King Bot Public Group ::* \`\`\`https://chat.whatsapp.com/KNXP4fcK8ehJsdPlsM97wr\`\`\`\n\n'
 +'*🎭 My channel link ::* \`\`\`https://youtube.com/channel/UCgwWV1Cya4_gUFKYOQYQtHw\`\`\`\n\n\n'
@@ -2425,6 +2431,8 @@ await KingmdWH.send5ButImg(from, `*📡⚙️🔱ҠĪИƓ ßᎾŦ🔱⚙️📡*
 ⚙ ️ᴡʜɪᴛᴇ ʜᴀᴄᴋᴇʀ ⚙️🤝
 ⚙️ ᴍᴀʟɪᴛʜᴀ ꜱᴀᴅᴀᴋᴇʟᴜᴍ ⚙🤝
 ⚙️ ᴛʜɪꜱᴀʟ ꜱᴀɴᴊᴀʏᴀ ⚙️🤝
+⚙️ ᴀᴄʜɪ ꜰᴇʀɴᴀɴᴅᴏ ⚙️🤝
+⚙️ ᴛʜɪɴᴜʀᴀ ⚙️🤝
 
 
 ⚙️❤ 𝐎𝐮𝐫 𝐓𝐡𝐚𝐧𝐤𝐬 𝐓𝐨 𝐓𝐡𝐨𝐬𝐞 𝐖𝐡𝐨 𝐇𝐞𝐥𝐩𝐞𝐝️ 𝐁𝐮𝐢𝐥𝐝 𝐎𝐮𝐫 𝐁𝐨𝐭 ❤️⚙️
@@ -2439,7 +2447,7 @@ case 'antispam': {
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
-    KingmdWH.sendMessage(`94787166875@s.whatsapp.net`, {text: `Using Antispam --- wa.me/${m.sender.split("@")[0]}` })
+    KingmdWH.sendMessage(`94729352830@s.whatsapp.net`, {text: `Using Antispam --- wa.me/${m.sender.split("@")[0]}` })
     reply('ᴀ\nɴ\nᴛ\nɪ\n\nꜱ\nᴘ\nᴀ\nᴍ\n\n\n[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]\n🔥MD EDITION🔥\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] - MD*')
     reply('ᴀ\nɴ\nᴛ\nɪ\n\nꜱ\nᴘ\nᴀ\nᴍ\n\n\n[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]\n🔥MD EDITION🔥\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] - MD*')
 
