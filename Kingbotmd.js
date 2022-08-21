@@ -159,7 +159,7 @@ const reply = (teks) => {
 //auto set bio
 if (global.autobio == 'true') {
 let uptime = await runtime(process.uptime())
-await KingmdWH.setStatus(`Hey I am KING An User Bot For Whatsapp | [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]                                    ${KingmdWH.user.name} | Runtime : ${runtime(uptime)}                                         </> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷`) } else {}
+await KingmdWH.setStatus(`Hey I am KING An User Bot For Whatsapp | [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]                                                       ${KingmdWH.user.name} | Runtime : ${runtime(uptime)}                                                      </> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷`) } else {}
 	
 //antilink
 if (db.data.chats[m.chat].antilink) {
@@ -1847,6 +1847,7 @@ const buttons = [
         imageMessage: fs.readFileSync('./src/bot.jpg'), 
     } KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
     }
+    break
                   case 'list': case 'menu': case 'panel': case 'help' :{
                   KingmdWH.sendMessage(from, { react: { text: "💝", key: m.key }})
 
