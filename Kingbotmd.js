@@ -158,9 +158,8 @@ const reply = (teks) => {
 
 //auto set bio
 if (global.autobio == 'true') {
-const kingtime = moment.tz('Asia/Colombo').format('HH:mm:ss')
-const kingdate = moment.tz('Asia/Colombo').format('DD/MM/YYYY')
-await KingmdWH.setStatus(`🙋‍♂️ 𝐇ᴇʏ 𝐈 ᴀᴍ ❝🪀 🅺︎🅸︎🅽︎🅶︎ 🪀❞ 𝐀ɴ 𝐔ꜱᴇʀ 𝐁ᴏᴛ 𝐅ᴏʀ 𝐖ʜᴀᴛꜱᴀᴘᴘ ▦ [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] ▦⌚ ${kingtime}    ▦📅 ${kingdate}    ▦    </> 𝐏ᴏᴡᴇʀᴇᴅ ʙʏ 𝐊𝐈𝐍𝐆 𝐁ᴏᴛ </>️ ▷`) } else {}
+let uptime = await runtime(process.uptime())
+await KingmdWH.setStatus(`Hey I am KING An User Bot For Whatsapp | [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]                                                       ${KingmdWH.user.name} | Runtime : ${runtime(uptime)}                                                      </> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷`) } else {}
 	
 //antilink
 if (db.data.chats[m.chat].antilink) {
@@ -603,8 +602,6 @@ if (!isCreator) return replay(`${mess.owner}`)
 if (!text) return replay(`🤕`)
 global.grouprules = args[0]
 KingmdWH.sendMessage(from, { react: { text: "⚙️", key: m.key }})
-global.grouprules = text.split("|")[0]
-king2 = text.split("|")[1]
 reply(`*⚡️ Successfully Changed GROUP_RULES TO ➢* \`\`\`${global.grouprules}\`\`\``)   }
 break
 case 'grules': {
@@ -1646,13 +1643,13 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 					break
                     case 'bug': case 'report': {
                     	if(!text) return reply(`Enter The Bug\n\nExample: ${command} Menu Error`)
-                    	KingmdWH.sendMessage(`94729352830@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
+                    	KingmdWH.sendMessage(`94787166875@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
                     break
                     case 'kingbug': {
-                    	KingmdWH.sendMessage(`94729352830@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
+                    	KingmdWH.sendMessage(`94787166875@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
 KingmdWH.sendMessage(from, { react: { text: "💝", key: m.key }})
 KingmdWH.sendMessage(m.chat, {text:'💖 Yᴏᴜ\'ʀᴇ Wᴇʟᴄᴏᴍᴇ'})   }
@@ -2216,7 +2213,7 @@ kingbotshortmenu = `🎭─────「⚙」─────🎭
                 case 'sc': case 'script': case 'git': case 'github': {
     KingmdWH.sendMessage(from, { react: { text: "💝", key: m.key }})
 Kingbotgitlink='*_🎭 [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] created by ШHłТΞ HΛϾКΞЯS 🎭_*\n\n'
-+'*🎭 Contact Owner ::* \`\`\`https://wa.me/94729352830?text=HI......%20𝚱𝚰𝚴Ｇ%20𝛃𝚯𝚪%20OWNER࿐\`\`\`\n\n'
++'*🎭 Contact Owner ::* \`\`\`https://wa.me/94787166875?text=HI......%20𝚱𝚰𝚴Ｇ%20𝛃𝚯𝚪%20OWNER࿐\`\`\`\n\n'
 +'*🎭 Github link ::* \`\`\`https://github.com/KING-BOT-OFFICIAL/KING-BOT-MD\`\`\`\n\n'
 +'*🎭 King Bot Public Group ::* \`\`\`https://chat.whatsapp.com/KNXP4fcK8ehJsdPlsM97wr\`\`\`\n\n'
 +'*🎭 My channel link ::* \`\`\`https://youtube.com/channel/UCgwWV1Cya4_gUFKYOQYQtHw\`\`\`\n\n\n'
@@ -2434,7 +2431,7 @@ case 'antispam': {
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
-    KingmdWH.sendMessage(`94729352830@s.whatsapp.net`, {text: `Using Antispam --- wa.me/${m.sender.split("@")[0]}` })
+    KingmdWH.sendMessage(`94787166875@s.whatsapp.net`, {text: `Using Antispam --- wa.me/${m.sender.split("@")[0]}` })
     reply('ᴀ\nɴ\nᴛ\nɪ\n\nꜱ\nᴘ\nᴀ\nᴍ\n\n\n[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]\n🔥MD EDITION🔥\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] - MD*')
     reply('ᴀ\nɴ\nᴛ\nɪ\n\nꜱ\nᴘ\nᴀ\nᴍ\n\n\n[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]\n🔥MD EDITION🔥\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] - MD*')
 
